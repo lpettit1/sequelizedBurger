@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger.js');
 
+var sequelizeConnection = models.sequelize;
+
+sequelizeConnection.sync();
+
+
+//-----------------------------------------------
+//Create routes
 router.get('/', function(req, res) {
 	res.redirect('/index');
 });
